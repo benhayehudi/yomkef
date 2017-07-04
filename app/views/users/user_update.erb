@@ -1,0 +1,23 @@
+<h2 id="page-title">Update Your Profile:</h2>
+
+<form action="/user_update" method="POST">
+  <input type="text" name="name" placeholder="<%= @user.name %>"><br>
+  <input type="text" name="username" placeholder="<%= @user.username %>"><br>
+  <input type="text" name="email" placeholder=" <%= @user.email %>"><br>
+  <input type="text" name="facebook_url" placeholder="<%= facebook_url? %>"><br>
+  <input type="text" name="twitter_url" placeholder="<%= twitter_url? %>"><br>
+  <input type="text" name="instagram_url" placeholder="<%= instagram_url? %>"><br>
+  <textarea id="about_me" placeholder="<%= about_me? %>"></textarea><br>
+  <input type="submit" value="Update">
+</form>
+<br>
+<h2 id="page-title">Update Your Password:</h2>
+<div id='flash' class='pw_reset_error'>
+  <%= flash[:pw_reset_error] %>
+</div>
+<form action="/update-pw" method="POST">
+  <input type="hidden" name="pw_username" value="<%= @user.username %>">
+  <input type="password" name="old_password" placeholder="Old Password: "><br>
+  <input type="password" name="new_password" placeholder="New Password: "><br>
+  <input type="submit" value="Update">
+</form>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<h2 id="page-title">Log In</h2>
+
+<div id='flash' class='error'>
+  <%= flash[:error] %>
+</div>
+<div id='flash' class='error'>
+  <%= flash[:add_listing_error] %>
+</div>
+<div id='flash' class='notice'>
+  <%= flash[:my_listing_error] %>
+</div>
+<div id='flash' class='notice'>
+  <%= flash[:user_update_error] %>
+</div>
+<form action="/login" method="POST">
+  <input type="text" name="username" placeholder="Username:">
+  <input type="password" name="password" placeholder="Password:">
+  <input type="submit" value="Submit">
+</form>
