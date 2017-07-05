@@ -6,7 +6,7 @@ def self.my_listings(user_id)
 end
 
 def self.search(search)
-    Listing.where(Listing.arel_table[:user_id].matches("%#{search}%"))
+    Listing.where(Listing.arel_table[:user_id::text].matches("%#{search}%"))
 end
 
 end
