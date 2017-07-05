@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <h2 id="page-title">My Listings</h2>
 
-<% @listings = Listing.where("user_id LIKE ?", "%#{params[:id]}%") %>
+<% @listings = @user.listings %>
 <% @listings.all.each do |listing| %>
 <div class="col-md-6 item-listing">
   <img src="<% if listing.img_url == nil || listing.img_url == "" %>
