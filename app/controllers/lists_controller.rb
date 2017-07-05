@@ -55,8 +55,15 @@ class ListsController < ApplicationController
 end
 
 get '/sessions/edit-listing/:id' do
+  @user = current_user
   @listing = Listing.find_by_id(params[:id])
-  erb :'/sessions/edit-listing'
+  if logged_in?
+    @listing = Listing.find_by_id(params[:id])
+    erb :'/sessions/edit-listing'
+  else
+    flash[:edit_listing_error] = "You must be logged in to edit a listing. Please login first."
+    redirect to "/login"
+  end
 end
 
 post '/listing-update/:id' do
@@ -67,7 +74,7 @@ post '/listing-update/:id' do
     @listing.save
     redirect '/sessions/my-listings'
   else
-    flash[:edit_listing_error] = "You must be logged in to add a listing. Please login first."
+    flash[:edit_listing_error] = "You must be logged in to edit a listing. Please login first."
     redirect to "/login"
     end
   end
