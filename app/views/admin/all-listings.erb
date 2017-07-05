@@ -4,7 +4,7 @@
 <strong>Location:</strong> <%= listing.location %><br>
 <strong>URL:</strong> <%= listing.url %><br>
 <strong>Image Link:</strong> <% if listing.img_url == nil || listing.img_url == "" %><%= "No Image Yet" %><% else %><%= listing.img_url %><br>
-<strong>Demographic:</strong> <%= listing.category %><br>
+<strong>Demographic:</strong> <%= listing.item_category %><br>
 <strong>Description:</strong> <%= listing.description %><Br>
 <strong><a href="#">Edit</a> | <a href="#">Delete</a></strong>
 <% end %>
