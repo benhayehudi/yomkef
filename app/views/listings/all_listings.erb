@@ -42,7 +42,7 @@
   </div>
 <% @listings = Listing.all %>
 <% @listings.uniq.each do |listing| %>
-<div class="col-md-2 item-listing">
+<div class="col-md-6 item-listing">
   <img src="<% if listing.img_url == nil || listing.img_url == "" %>
     <%= "/images/default_listing_img.png" %>
     <% else %>
