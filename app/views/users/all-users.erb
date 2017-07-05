@@ -1,5 +1,4 @@
-<% @users = User.select('on (name) *') %>
-<% @users.each do |user| %>
+<% @users = User.find_each do |user| %>
 <div class="col-md-12 item-listing">
 <strong><h4>><%= user.name %></a></h4></strong><br>
 <strong>Email:</strong> <%= user.email %><br>
