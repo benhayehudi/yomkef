@@ -1,4 +1,4 @@
-<% @listings = Listing.where("name LIKE ? OR location LIKE ? OR item_category LIKE ?", "%#{params[:name]}%","%#{params[:location]}%","%#{params[:item_category]}%") %>
+<% @listings = Listing.where("name ILIKE ? OR location ILIKE ? OR item_category ILIKE ?", "%#{params[:name]}%","%#{params[:location]}%","%#{params[:item_category]}%") %>
 <% @listings.all.each do |listing| %>
 <div class="col-md-6 item-listing">
   <img src="<% if listing.img_url == nil || listing.img_url == "" %>
