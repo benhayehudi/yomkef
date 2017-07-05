@@ -9,6 +9,7 @@ get "/admin/admin-main" do
   else
     flash[:admin_access_error] = "You must be an administrator to access this page."
     redirect '/index'
+  end
 end
 
 get "/admin/all-users" do
