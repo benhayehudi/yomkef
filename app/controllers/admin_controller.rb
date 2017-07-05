@@ -5,7 +5,7 @@ get "/admin/admin-main.erb" do
 end
 
 get "/admin/all-users" do
-  erb :'/users/all-users'
+  erb :'/admin/all-users'
 end
 
 
