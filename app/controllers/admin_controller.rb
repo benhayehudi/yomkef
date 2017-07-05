@@ -37,7 +37,7 @@ get "/admin/all-listings" do
   end
 end
 
-get "/admin/edit-listing/:id"
+get "/admin/edit-listing/:id" do
 if logged_in?
   @user = current_user
   if @user.id == 1
@@ -49,7 +49,7 @@ if logged_in?
   end
 end
 
-get "/admin/delete-listing/:id"
+get "/admin/delete-listing/:id" do
 if logged_in?
   @user = current_user
   if @user.id == 1
@@ -61,7 +61,7 @@ if logged_in?
   end
 end
 
-get "/admin/edit-user/:id"
+get "/admin/edit-user/:id" do
 if logged_in?
   @user = current_user
   if @user.id == 1
@@ -73,7 +73,7 @@ if logged_in?
   end
 end
 
-get "/admin/delete-user/:id"
+get "/admin/delete-user/:id" do
 if logged_in?
   @user = current_user
   if @user.id == 1
