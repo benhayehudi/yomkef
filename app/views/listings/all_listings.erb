@@ -47,7 +47,7 @@
     <%= "/images/default_listing_img.png" %>
     <% else %>
     <%= listing.img_url %>
-    <% end %>" class="img-thumbnail" alt="Yom Kef" align="left">
+    <% end %>" class="img-thumbnail" alt="Yom Kef" align="left" size="40">
 <strong><h4><a href="/listings/show/<%= listing.id %>"><%= listing.name %></a></h4></strong><a href="/sessions/add-listing-item/<%= listing.id %>"> + Add This</a><br><br>
 <strong>Location:</strong> <%= listing.location %><br>
 <strong>Category:</strong> <%= listing.item_category %><br>
