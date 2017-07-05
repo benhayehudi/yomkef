@@ -85,6 +85,10 @@ class ApplicationController < Sinatra::Base #open class
     erb :'/users/user_main'
   end #close do
 
+  get "/users/all-users" do
+    erb :'/users/all-users'
+  end
+
   get "/login" do #open do
     erb :login
   end #close do
