@@ -23,6 +23,10 @@ class ApplicationController < Sinatra::Base #open class
     erb :about
   end
 
+  get "/contact" do
+    erb :contact
+  end
+
   get "/registrations/signup" do #open do
     erb :'/registrations/signup'
   end #close do
