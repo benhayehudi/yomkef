@@ -28,7 +28,7 @@ end
 get "/admin/all-listings" do
   if logged_in?
     @user = current_user
-    if @user.username == "rabbiben"
+    if @user.id == 1
       erb :'/admin/all-listings'
     else
       flash[:admin_access_error] = "You must be an administrator to access this page."
@@ -37,8 +37,55 @@ get "/admin/all-listings" do
   end
 end
 
+get "/admin/edit-listing/:id"
+if logged_in?
+  @user = current_user
+  if @user.id == 1
+    erb :'/admin/edit-listing'
+  else
+    flash[:admin_access_error] = "You must be an administrator to access this page."
+    redirect to '/'
+    end
+  end
+end
 
+get "/admin/delete-listing/:id"
+if logged_in?
+  @user = current_user
+  if @user.id == 1
+    erb :'/admin/delete-listing'
+  else
+    flash[:admin_access_error] = "You must be an administrator to access this page."
+    redirect to '/'
+    end
+  end
+end
 
+get "/admin/edit-user/:id"
+if logged_in?
+  @user = current_user
+  if @user.id == 1
+    erb :'/admin/edit-user'
+  else
+    flash[:admin_access_error] = "You must be an administrator to access this page."
+    redirect to '/'
+    end
+  end
+end
+
+get "/admin/delete-user/:id"
+if logged_in?
+  @user = current_user
+  if @user.id == 1
+    user_entry = User.find_by_id(params[:id])
+    user_entry.delete
+    redirect to '/admin/all-users'
+  else
+    flash[:admin_access_error] = "You must be an administrator to access this page."
+    redirect to '/'
+    end
+  end
+end
 
 
 end

@@ -6,7 +6,7 @@
 <strong>Image Link:</strong> <% if listing.img_url == nil || listing.img_url == "" %><%= "No Image Yet" %><% else %><%= listing.img_url %><br>
 <strong>Demographic:</strong> <%= listing.item_category %><br>
 <strong>Description:</strong> <%= listing.description %><Br>
-<strong><a href="#">Edit</a> | <a href="#">Delete</a></strong>
+<strong><a href="/admin/edit-listing/<%= listing.id %>">Edit</a> | <a href="/admin/delete-listing/<%= listing.id %>">Delete</a></strong>
 <% end %>
 </div>
 <% end %>
