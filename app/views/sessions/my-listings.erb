@@ -8,7 +8,7 @@
     <%= "/images/default_listing_img.png" %>
     <% else %>
     <%= listing.img_url %>
-    <% end %>" class="img-thumbnail" alt="Yom Kef" align="left">
+    <% end %>" class="img-thumbnail" alt="Yom Kef" align="left" size="40">
 <strong><h4><a href="/listings/show/<%= listing.id %>"><%= listing.name %></a></h4></strong><a href="/sessions/edit-listing/<%= listing.id %>"> + Edit Listing</a><br><br>
 <strong>Location:</strong> <%= listing.location %><br>
 <strong>URL:</strong> <a href="<%= listing.url %>" target="_blank"><%= listing.url %></a><br>
