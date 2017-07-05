@@ -53,7 +53,9 @@ get "/admin/delete-listing/:id" do
 if logged_in?
   @user = current_user
   if @user.id == 1
-    erb :'/admin/delete-listing'
+    listing_entry = Listing.find_by_id(params[:id])
+    listing_entry.delete
+    redirect to '/admin/all-listings'
   else
     flash[:admin_access_error] = "You must be an administrator to access this page."
     redirect to '/'
