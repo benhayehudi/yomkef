@@ -3,6 +3,6 @@
 <strong><h4>><%= user.name %></a></h4></strong><br>
 <strong>Email:</strong> <%= user.email %><br>
 <strong>Username:</strong> <%= user.username %><br>
-<strong>About:</strong> <% if @user.about_me == nil || @user.about_me == "" %><%= "No About Me Yet" %><% else %><%= @user.about_me %><% end %><% end %><br>
+<strong>About:</strong> <% if user.about_me == nil || user.about_me == "" %><%= "No About Me Yet" %><% else %><%= user.about_me %><% end %><% end %><br>
 
 </div>
