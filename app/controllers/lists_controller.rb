@@ -17,8 +17,13 @@ class ListsController < ApplicationController
   end
 
   get "/sessions/add-listing" do
+    if logged_in?
     @user = current_user
     erb :'/sessions/add-listing'
+  else
+    flash[:add_listing_error] = "You must be logged in to add a listing. Please login first."
+    redirect to "/login"
+    end
   end
 
   post "/add-listing" do
