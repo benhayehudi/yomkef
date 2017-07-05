@@ -40,7 +40,7 @@
 
   </form>
   </div>
-<% @listings = Listing.all %>
+<% @listings = Listing.select('distinct on (name) *') %> 
 <% @listings.uniq.each do |listing| %>
 <div class="col-md-6 item-listing">
   <img src="<% if listing.img_url == nil || listing.img_url == "" %>
