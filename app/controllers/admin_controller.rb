@@ -20,7 +20,7 @@ get "/admin/all-users" do
       erb :'/admin/all-users'
     else
       flash[:admin_access_error] = "You must be an administrator to access this page."
-      redirect to '/index'
+      redirect to '/'
     end
   end
 end
@@ -32,7 +32,7 @@ get "/admin/all-listings" do
       erb :'/admin/all-listings'
     else
       flash[:admin_access_error] = "You must be an administrator to access this page."
-      redirect to '/index'
+      redirect to '/'
     end
   end
 end
