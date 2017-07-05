@@ -6,7 +6,7 @@
 <h3>Your Listings</h3>
 <br>
 
-<% @listings = Listing.find_by(user_id: params[:id]) %>
+<% @listings = Listing.where("user_id = ?", "%#{params[:id]}%") %>
 <% @listings.all.each do |listing| %>
 <div class="col-md-6 item-listing">
   <img src="<% if listing.img_url == nil || listing.img_url == ""%>
