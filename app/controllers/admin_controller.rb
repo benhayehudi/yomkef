@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-get "/admin/admin-main.erb" do
+get "/admin/admin-main" do
   erb :'/admin/admin-main'
 end
 
