@@ -6,7 +6,7 @@
     <% else %>
     <%= listing.img_url %>
     <% end %>" class="img-thumbnail" alt="Yom Kef" align="left" width="120">
-<strong><h4><%= listing.name %></h4></strong><a href="#"> + Edit Listing</a><br><br>
+<strong><h4><%= listing.name %></h4></strong><a href="/sessions/add-listing-item/<%= listing.id %>"> + Add Listing</a><br><br>
 <strong>Location:</strong> <%= listing.location %><br>
 <strong>URL:</strong> <a href="<%= listing.url %>"><%= listing.url %></a><br>
 <strong>Category:</strong> <%= listing.item_category %><br>
