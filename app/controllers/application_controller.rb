@@ -2,7 +2,7 @@ require './config/environment'
 require "./app/models/user"
 require "./app/models/listing"
 require 'rack-flash'
-set :database, "sqlite3:./db/development.sqlite3"
+# set :database, "sqlite3:./db/development.sqlite3"
 
 
 class ApplicationController < Sinatra::Base #open class
