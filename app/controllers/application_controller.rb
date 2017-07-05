@@ -55,7 +55,7 @@ class ApplicationController < Sinatra::Base #open class
   if logged_in?
     @user = current_user
     # @user.update_attributes(name: params[:name], username: params[:username], email: params[:email], facebook_url: params[:facebook_url], twitter_url: params[:twitter_url], instagram_url: params[:instagram_url], about_me: params[:about_me])
-    @user.update_attributes(:name => params[:name], :username => params[:username], :email => params[:email], :facebook_url => params[:facebook_url], :twitter_url => params[:twitter_url], :instagram_url => params[:instagram_url], :about_me => params[:about_me])
+    @user.update_attributes(:name => params["name"], :username => params["username"], :email => params["email"], :facebook_url => params["facebook_url"], :twitter_url => params["twitter_url"], :instagram_url => params["instagram_url"], :about_me => params["about_me"])
     @user.save
     redirect to "/users/user_main"
     end
