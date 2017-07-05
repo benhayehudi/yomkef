@@ -1,4 +1,4 @@
-class ListsController < ApplicationController
+class AdminController < ApplicationController
 
 get "/admin/admin-main.erb" do
   erb :'/admin/admin-main'
