@@ -23,6 +23,6 @@ production:
   database: db/production.sqlite3
   username: username
   password: password
-  host: localhost
+  host: postgres://ooghjyvxfzloqf:67cf9ebaed50d7529e7aabfd4a4cc1fd324c7b13ac5f96dbf44b5e4e4f7fc3e4@ec2-23-23-86-179.compute-1.amazonaws.com:5432/d3pr3tdi2d5c38
   pool: 5
   timeout: 5000
