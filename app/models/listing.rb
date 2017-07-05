@@ -5,4 +5,8 @@ def self.my_listings(user_id)
   @listings = Listing.all.find{|user| user.user_id == user_id}
 end
 
+def self.search(search)
+    Listing.where(Listing.arel_table[:user_id].matches("%#{search}%"))
+end
+
 end
