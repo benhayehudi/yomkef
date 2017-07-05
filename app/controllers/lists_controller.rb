@@ -55,7 +55,6 @@ class ListsController < ApplicationController
 end
 
 get '/sessions/edit-listing/:id' do
-  @user = current_user
   @listing = Listing.find_by_id(params[:id])
   if logged_in?
     @listing = Listing.find_by_id(params[:id])
