@@ -67,7 +67,7 @@ get "/admin/edit-user/:id" do
   if logged_in?
     @user = current_user
     if @user.id == 1
-      user_entry = Listing.find_by_id(params[:id])
+      user_entry = User.find_by_id(params[:id])
       erb :'/admin/edit-user'
     end
   end
