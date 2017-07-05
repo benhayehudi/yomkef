@@ -6,9 +6,9 @@ get "/admin/admin-main" do
     @user = current_user
     if @user.username == "rabbiben"
       erb :'/admin/admin-main'
-    elsif logged_in? == false
+    else
       flash[:admin_access_error] = "You must be an administrator to access this page."
-      redirect '/index'
+      redirect to '/index'
     end
   end
 end
@@ -18,9 +18,9 @@ get "/admin/all-users" do
     @user = current_user
     if @user.username == "rabbiben"
       erb :'/admin/all-users'
-    elsif logged_in? == false
+    else
       flash[:admin_access_error] = "You must be an administrator to access this page."
-      redirect '/index'
+      redirect to '/index'
     end
   end
 end
