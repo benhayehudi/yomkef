@@ -8,12 +8,12 @@ Bundler.require(:default, ENV['SINATRA_ENV'])
 #   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
 # )
 
-configure :development do
-  ActiveRecord::Base.establish_connection(
-  :adapter => "sqlite3",
-  :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
-)
-end
+# configure :development do
+#   ActiveRecord::Base.establish_connection(
+#   :adapter => "sqlite3",
+#   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
+# )
+# end
 
 configure :production do
   db = URI.parse(ENV['HEROKU_POSTGRESQL_COBALT_URL'] || 'postgres://localhost/mydb')
