@@ -1,4 +1,11 @@
 <div class="col-md-12 item-listing">
+  <meta property="og:image" content="<% if @listing.img_url == nil || @listing.img_url == "" %>
+    <%= "/images/default_listing_img.png" %>
+    <% else %>
+    <%= @listing.img_url %>
+    <% end %>"></meta>
+  <meta property="og:url" content="<%= @listing.url %>"></meta>
+  
   <img src="<% if @listing.img_url == nil || @listing.img_url == "" %>
     <%= "/images/default_listing_img.png" %>
     <% else %>
