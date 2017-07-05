@@ -8,7 +8,7 @@
 
 <% @listings = @user.listings %>
 <% @listings.all.each do |listing| %>
-<div class="col-md-6 item-listing">
+<div class="col-md-12 item-listing">
   <img src="<% if listing.img_url == nil || listing.img_url == ""%>
     <%= "/images/default_listing_img.png" %>
     <% else %>
