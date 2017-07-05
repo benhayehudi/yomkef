@@ -79,6 +79,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 4.2, >= 4.2.6)
   activerecord-postgresql-adapter
+  arel
   bcrypt
   pg
   pry
