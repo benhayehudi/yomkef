@@ -4,7 +4,7 @@ require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
 configure :production do
-  db = URI.parse(ENV['HEROKU_POSTGRESQL_COBALT_URL'] || 'postgres://localhost/mydb')
+  db = URI.parse(ENV['YOMKEF_DB_URL'] || 'postgres://localhost/mydb')
 
   ActiveRecord::Base.establish_connection(
     :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
