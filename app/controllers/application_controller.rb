@@ -58,6 +58,9 @@ class ApplicationController < Sinatra::Base #open class
     @user.update_attributes(:name => params["name"], :username => params["username"], :email => params["email"], :facebook_url => params["facebook_url"], :twitter_url => params["twitter_url"], :instagram_url => params["instagram_url"], :about_me => params["about_me"])
     @user.save
     redirect to "/users/user_main"
+  else
+    flash[:edit_profile_error] = "You must be logged in to edit your profile. Please login first."
+    redirect to "/login"
     end
   end #close do
 
