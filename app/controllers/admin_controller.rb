@@ -2,8 +2,8 @@ class AdminController < ApplicationController
   use Rack::Flash
 
 get "/admin/admin-main" do
-  @user = current_user
   if logged_in?
+    @user = current_user
     if @user.username == "rabbiben"
       erb :'/admin/admin-main'
     else
@@ -14,8 +14,8 @@ get "/admin/admin-main" do
 end
 
 get "/admin/all-users" do
-  @user = current_user
   if logged_in?
+    @user = current_user
     if @user.username == "rabbiben"
       erb :'/admin/all-users'
     else
