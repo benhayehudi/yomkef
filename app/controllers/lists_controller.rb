@@ -29,7 +29,7 @@ class ListsController < ApplicationController
   post "/add-listing" do
     @user = current_user
     if logged_in?
-      unless params[:name] == "" || params[:description] == "" || params[:location] == "" || params[:item_category] == ""
+      unless params[:name] == "" || params[:description] == "" || params[:location] == "default" || params[:item_category] == "selection"
       @listing = Listing.create(name: params["name"], location: params["location"], url: params["url"], img_url: params["img_url"], item_category: params["item_category"], description: params["description"], user_id: params["user_id"])
       redirect '/listings/all_listings'
     else
