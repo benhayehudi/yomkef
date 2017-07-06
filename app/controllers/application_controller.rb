@@ -33,8 +33,8 @@ class ApplicationController < Sinatra::Base #open class
   end #close do
 
   post "/signup" do #open do
-    if params[:username] == "" || params[:password] == "" || params[:email] == ""
-      redirect '/registrations/signup'
+    if params[:username] == "" || params[:password] == "" || params[:email] == "" || params[:email] !~ (/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i)
+    redirect '/registrations/signup'
     else
       @user = User.create(name: params["name"], username: params["username"], email: params["email"], password: params["password"])
       session[:user_id] = @user.id

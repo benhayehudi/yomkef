@@ -54,9 +54,9 @@ post "/admin/edit-listing/:id" do
 if logged_in?
   @user = current_user
   if @user.id == 1
-    listing_entry = Listing.find_by_id(params[:id])
-    listing_entry.update_attributes(name: params["name"], location: params["location"], url: params["url"], img_url: params["img_url"], item_category: params["item_category"], description: params["description"])
-    listing_entry.save
+    @listing_entry = Listing.find_by_id(params[:id])
+    @listing_entry.update_attributes(name: params["name"], location: params["location"], url: params["url"], img_url: params["img_url"], item_category: params["item_category"], description: params["description"])
+    @listing_entry.save
     redirect to "/admin/all-listings"
   else
     flash[:admin_access_error] = "You must be an administrator to access this page."
