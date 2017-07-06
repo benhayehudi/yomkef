@@ -28,12 +28,14 @@ class ListsController < ApplicationController
 
   post "/add-listing" do
     @user = current_user
-    if logged_in? && params[:name] =! "" && params[:description] =! "" && params[:location] =! "" && params[:item_category] =! ""
+    if logged_in?
+      unless params[:name] == "" && params[:description] == "" && params[:location] == "" && params[:item_category] == ""
       @listing = Listing.create(name: params["name"], location: params["location"], url: params["url"], img_url: params["img_url"], item_category: params["item_category"], description: params["description"], user_id: params["user_id"])
       redirect '/listings/all_listings'
     else
       flash[:add_listing_error] = "You must be logged in to add a listing and submit all required information. Please try again."
       redirect to "/login"
+      end
     end
   end
 
