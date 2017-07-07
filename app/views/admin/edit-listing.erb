@@ -43,20 +43,13 @@
   </div>
 
   <div class="form-group">
-    <label name="owner_id"><input type="text" class="form-control input-lg"
-      value="<% if @owner.name == nil || @owner.name == "" %><%= "Owner name not provided" %><% else %><%= @owner.name %><% end %>"
-      placeholder="Owner Not Provided" name="owner_id" aria-describedby="sizing-addon1"></label><br>
-  </div>
-
-  <div class="form-group">
-    <label name="owner_email"><input type="text" class="form-control input-lg"
-      value="<% if @owner.email == nil || @owner.email == "" %><%= "Owner email not provided" %><% else %><%= @owner.email %><% end %>"
-      placeholder="Owner Not Provided" name="owner_email" aria-describedby="sizing-addon1"></label><br>
-  </div>
-
-  <div class="form-group">
   <label name="submit"><input type="submit" value="Submit" class="btn btn-default"></label>
   </div>
 
   </form>
   </div>
+
+  <p>Submitted by:</p>
+  <strong>Name:</strong> <% if @owner.name == nil || @owner.name == "" %><%= "Owner name not provided" %><% else %><%= @owner.name %><% end %><br>
+  <strong>Email:</strong> <% if @owner.email == nil || @owner.email == "" %><%= "Owner email not provided" %><% else %><%= @owner.email %><% end %><br>
+  <strong>Created on:</strong> <%= @listing_entry.created_at %>
