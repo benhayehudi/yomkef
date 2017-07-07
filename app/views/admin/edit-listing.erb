@@ -49,6 +49,12 @@
   </div>
 
   <div class="form-group">
+    <label name="owner_email"><input type="text" class="form-control input-lg"
+      value="<% if @owner.email == nil || @owner.email == "" %><%= "Owner email not provided" %><% else %><%= @owner.email %><% end %>"
+      placeholder="Owner Not Provided" name="owner_email" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
   <label name="submit"><input type="submit" value="Submit" class="btn btn-default"></label>
   </div>
 
