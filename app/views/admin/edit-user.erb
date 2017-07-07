@@ -36,10 +36,11 @@
   </form>
   </div>
 
-  <strong><%= @user_entry.name %> Submitted Listings:<p>
+  <strong><%= @user_entry.name %> Submitted Listings:</strong><p></p>
 
-  <% @user_entry.listings.all do |listing| %>
-    <strong>Listing Name:</strong> <%= listing.name %><br>
-    <strong>Listing Created On:</strong> <%= listing.created_at %><br>
-    <a href="/admin/edit-listing/<% listing.id %>">View/Edit Listing</a>
+  <% @listings = @user_entry.listings %>
+  <% @listings.all.each do |listing| %>
+  <strong>Listing Name:</strong> <%= listing.name %><br>
+  <strong>Listing Created On:</strong> <%= listing.created_at %><br>
+  <a href="/admin/edit-listing/<% listing.id %>">View/Edit Listing</a>
   <% end %>
