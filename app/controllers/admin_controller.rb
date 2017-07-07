@@ -42,6 +42,7 @@ if logged_in?
   @user = current_user
   if @user.id == 1
     @listing_entry = Listing.find_by_id(params[:id])
+    @owner = User.find_by_id(@listing_entry.user_id)
     erb :'/admin/edit-listing'
   else
     flash[:admin_access_error] = "You must be an administrator to access this page."
