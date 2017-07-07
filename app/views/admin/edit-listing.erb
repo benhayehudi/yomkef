@@ -43,7 +43,9 @@
   </div>
 
   <div class="form-group">
-    <label name="owner_id"><input type="text" class="form-control input-lg" value="<%= @owner.name %>" placeholder="Owner Not Provided" name="owner_id" aria-describedby="sizing-addon1"></label><br>
+    <label name="owner_id"><input type="text" class="form-control input-lg"
+      value="<% if @owner.name == nil || @owner.name == "" %><%= "Owner name not provided" %><% else %><%= @owner.name %><% end %>"
+      placeholder="Owner Not Provided" name="owner_id" aria-describedby="sizing-addon1"></label><br>
   </div>
 
   <div class="form-group">
