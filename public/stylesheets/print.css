@@ -3,6 +3,11 @@
   .navbar{ display:none;}
   .container{ width:100%;}
 
+  .item-listing {
+    background-color: #FFFFFF;
+    border: 0px solid #FFFFFF;
+  }
+
   #print-button {
   	display: none;
   }
