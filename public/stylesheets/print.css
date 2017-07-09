@@ -2,16 +2,17 @@
   body{ background-color:#FFFFFF; background-image:none; color:#000000 }
   .navbar{ display:none;}
   .container{ width:100%;}
-}
 
-#print-button {
-	display: none;
-}
+  #print-button {
+  	display: none;
+  }
 
-#twitter-icon {
-  display: none;
-}
+  #twitter-icon {
+    display: none;
+  }
 
-#facebook-icon {
-  display: none;
+  #facebook-icon {
+    display: none;
+  }
+
 }
