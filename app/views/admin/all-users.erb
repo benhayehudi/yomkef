@@ -1,9 +1,8 @@
+<div class="col-md-12">
 <ul>
 <% @users = User.find_each do |user| %>
-<div class="col-md-12">
-  <li><strong><%= user.name %></a></strong><br> -- <a href="/admin/edit-user/<%= user.id %>">Edit</a> | <a href="/admin/delete-user/<%= user.id %>">Delete</a>
-<% end %><br>
-</div>
+  <li><strong><%= user.id %>. <%= user.name %></a></strong><br> -- <a href="/admin/edit-user/<%= user.id %>">Edit</a> | <a href="/admin/delete-user/<%= user.id %>">Delete</a>
+  </ul>
 <% end %>
-</ul>
+</div>
 <a href="/admin/admin-main">Administrative Main Page</a> | <a href="/">Home Page</a>
