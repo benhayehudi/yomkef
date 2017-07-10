@@ -5,7 +5,8 @@
 <strong>URL:</strong> <%= listing.url %><br>
 <strong>Image Link:</strong> <% if listing.img_url == nil || listing.img_url == "" %><%= "No Image Yet" %><% else %><%= listing.img_url %><br>
 <strong>Demographic:</strong> <%= listing.item_category %><br>
-<strong>Description:</strong> <%= listing.description %><Br>
+<strong>Description:</strong> <%= listing.description %><br>
+<strong>Owned by:</strong> <% @author = User.find_by_id(listing.user_id) %><%= @author.name %><br>
 <strong><a href="/admin/edit-listing/<%= listing.id %>">Edit</a> | <a href="/admin/delete-listing/<%= listing.id %>">Delete</a></strong>
 <% end %>
 </div>
